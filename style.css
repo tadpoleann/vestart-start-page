@@ -14,10 +14,10 @@
 
 body {
   line-height: 1.4;
-  letter-spacing: 0.0625rem;
-  text-align: justify;
+  /* letter-spacing: 0.0625rem;
+  text-align: justify; */
   font-family: var(--ff-cinzel);
-  color: #bf7300;
+  color: #d99227;
   font-weight: 900;
   overflow-x: hidden;
 }
@@ -69,7 +69,8 @@ img {
 }
 
 .bg {
-  background: url("./background/vestartbg.jpg") no-repeat center center fixed;
+  background: url("./background/vestartbg-min.jpg") no-repeat center center
+    fixed;
   background-size: cover;
   z-index: 1;
   position: relative;
@@ -153,20 +154,18 @@ nav {
 }
 
 .sidebarContainer img {
-  width: 1rem;
+  width: 1.5rem;
   opacity: 0.8;
 }
 .sidebarContainer img:hover {
   opacity: 1;
-  color: blue;
+  color: #2e3293;
 }
 .left-logo-container img {
   margin-bottom: 4rem;
   margin-top: 4.5rem;
 }
-.socialsContainer img {
-  margin-bottom: 4rem;
-}
+
 /****** End Side Navbar ******/
 
 /***** Descriptions *****/
@@ -178,7 +177,6 @@ nav {
 }
 
 .companyDescription p {
-  letter-spacing: 0;
   text-align: left;
   margin-left: 4.2rem;
   max-width: 25rem;
@@ -199,7 +197,6 @@ nav {
 }
 
 .companyDescription2 p {
-  letter-spacing: 0;
   text-align: right;
   margin-right: 4.2rem;
   margin-left: auto;
@@ -268,7 +265,7 @@ nav {
   background-color: antiquewhite;
   box-shadow: 0px 5px 15px 2px rgba(0, 0, 0, 1);
   padding: 0.625rem;
-  border-image-source: url("./pics/frame1.png");
+  border-image-source: url("./pics/frame3-min.png");
   border-image-slice: 100;
   border-image-repeat: round;
 }
@@ -382,7 +379,7 @@ nav {
 .faq-q-title {
   background: rgba(255, 255, 255, 0.1);
   color: hsl(37, 73%, 51%);
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 900;
   text-align: center;
   font-family: var(--ff-cinzel);
@@ -394,12 +391,14 @@ nav {
 }
 .panel {
   padding: 0 18px;
+  margin-bottom: 18px;
   background: rgba(255, 255, 255, 0.8);
   color: black;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
 @supports (backdrop-filter: blur(0.5rem)) {
   .faq-q-title {
     background: rgba(255, 255, 255, 0.1);
@@ -449,7 +448,7 @@ nav {
 }
 @media (min-width: 1017px) {
   .sidebarContainer img {
-    width: 1.25rem;
+    width: 2rem;
   }
   .logoImg {
     visibility: unset;
@@ -471,6 +470,10 @@ nav {
   #frame img {
     max-width: 10rem;
   }
+  /* FAQ */
+  .faq-q-title {
+    font-size: 1.3rem;
+  }
 }
 @media (min-width: 1320px) {
   .contactAndFaq-container {
@@ -478,10 +481,6 @@ nav {
     flex-direction: row;
   }
   .faq-form {
-    width: 50%;
-  }
-  /* == Contact Form == */
-  .map-container {
     width: 50%;
   }
 }
