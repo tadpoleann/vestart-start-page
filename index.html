@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vestart</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper bg">
+      <button
+        class="mobile-nav-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Menu</span>
+      </button>
+      <nav id="navbar" data-visible="false" tabindex="0">
+        <ul
+          class="nav-menu animate__animated animate__fadeInUp"
+          role="menubar"
+          aria-haspopup="true"
+        >
+          <li role="menuitem" aria-label="Home" class="nav-item active">
+            <a class="nav-link" href="/index.html">Home</a>
+          </li>
+          <li class="nav-item" role="menuitem" aria-label="Shop">
+            <a class="nav-link" href="#">Shop</a>
+          </li>
+          <li class="nav-item" role="menuitem" aria-label="GenuineWood">
+            <a class="nav-link" href="#">Frames</a>
+          </li>
+          <li class="nav-item" role="menuitem" aria-label="Contact">
+            <a class="nav-link" href="/faq.html">FAQ</a>
+          </li>
+          <li class="nav-item" role="menuitem" aria-label="Contact">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="sidebarContainer">
+        <div class="left-logo-container">
+          <a href=""><img src="./icons/vestartsSide.png" alt="LOGO" /></a>
+        </div>
+        <div class="socialsContainer">
+          <a href=""><img src="./socials/instagram.png" alt="Instagram" /></a>
+          <a href=""><img src="./socials/twitter.png" alt="Twitter" /></a>
+          <a href=""><img src="./socials/facebook.png" alt="Facebook" /></a>
+        </div>
+      </div>
+
+      <div class="companyDescription">
+        <img src="./icons/circles.svg" alt="circles" />
+        <p class="animate__animated animate__fadeInLeft">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aut
+          dolorum vel, consequatur debitis quidem eligendi dignissimos quas
+          aliquam quibusdam ducimus voluptatem quae nobis rem voluptates error
+          dolores ab in?
+        </p>
+      </div>
+
+      <div class="companyDescription2">
+        <img src="./icons/circles.svg" alt="circles" />
+        <p class="animate__animated animate__fadeInRight">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aut
+          dolorum vel, consequatur debitis quidem eligendi dignissimos quas
+          aliquam quibusdam ducimus voluptatem quae nobis rem voluptates error
+          dolores ab in?
+        </p>
+      </div>
+      <!-- carousel -->
+      <div class="carousel-container">
+        <div class="left-arrow-container" onclick="changePicBw()">
+          <img src="./icons/rightArrow.svg" alt="leftArrow" />
+        </div>
+        <div class="current-img-container animate__animated animate__flipInY">
+          <img src="./carousel/Slide1.jpg" alt="frames" />
+        </div>
+        <div class="right-arrow-container" onclick="changePicFw()">
+          <img src="./icons/rightArrow.svg" alt="rightArrow" />
+        </div>
+      </div>
+
+      <div class="logoImg">
+        <img src="./pics/vestartlogo.svg" alt="frames" />
+      </div>
+
+      <!-- second column of main page in large screen sizes-->
+      <section class="mainProduct">
+        <div
+          id="painting"
+          class="btnsContainer animate__animated animate__flipInY"
+        >
+          <img id="btn1" src="./pics/paintinga.png" alt="" />
+          <img id="btn2" src="./pics/paintingb.png" alt="" />
+          <img id="btn3" src="./pics/paintingc.png" alt="" />
+        </div>
+        <div id="frame" class="btnsContainer">
+          <img id="frame1" src="./pics/frame swatch 1.png" alt="F96" />
+          <img id="frame2" src="./pics/frame swatch 2.png" alt="F96" />
+          <img id="frame3" src="./pics/frame swatch 3.png" alt="F96" />
+        </div>
+        <div>
+          <img
+            class="frame nav-menu animate__animated animate__flipInX"
+            id="framedImg"
+            src="./pics/paintinga.png"
+            alt="painting"
+          />
+        </div>
+      </section>
+
+      <div class="pointsContainer">
+        <div class="point-img">
+          <img src="./icons/watering-can.svg" alt="customer-service" />
+        </div>
+        <div class="point-img">
+          <img src="./icons/plant.svg" alt="icon2" />
+        </div>
+        <div class="point-img">
+          <img src="./icons/thermometer.svg" alt="icon3" />
+        </div>
+      </div>
+
+      <!-- CONTACT and FAQ SECTION -->
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/nav.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel&family=Cinzel+Decorative:wght@700&display=swap");
+
+:root {
+  --blueBrand: 46, 49, 146;
+  --ff-cinzel: "Cinzel", serif;
+  --ff-cinzel-decorative: "Cinzel Decorative", cursive;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1.4;
+  letter-spacing: 0.0625rem;
+  text-align: justify;
+  font-family: var(--ff-cinzel);
+  color: #bf7300;
+  font-weight: 900;
+  overflow-x: hidden;
+}
+
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  border-bottom: 1px solid #bf73008a;
+  color: #bf7300;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important; /* 1 */
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important; /* 2 */
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important; /* 3 */
+}
+
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+  clip: auto !important;
+  -webkit-clip-path: none !important;
+  clip-path: none !important;
+  height: auto !important;
+  margin: auto !important;
+  overflow: visible !important;
+  width: auto !important;
+  white-space: normal !important;
+}
+
+.bg {
+  background: url("./background/vestartbg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  z-index: 1;
+  position: relative;
+}
+/******* NAVBAR *******/
+nav {
+  /* border: 2px solid magenta; */
+  grid-area: header;
+  padding: 0.55rem;
+  position: sticky;
+  z-index: 3;
+  top: 0;
+  background: rgba(var(--blueBrand), 0.8);
+  transition: background-color 0.8s ease-out, padding 0.4s ease-out;
+}
+.nav-menu {
+  list-style: none;
+  padding: 0.4rem;
+  margin: 0.5rem;
+  display: flex;
+}
+.nav-link {
+  color: whitesmoke;
+  text-shadow: 3px 1px 1px rgba(0, 0, 0, 1);
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-left: 2.5rem;
+}
+.scroll {
+  background: rgba(var(--blueBrand), 0.8);
+  padding: 0.4rem;
+}
+@supports (backdrop-filter: blur(0.5rem)) {
+  .scroll {
+    background: rgba(var(--blueBrand), 0.6);
+    backdrop-filter: blur(0.6rem);
+  }
+}
+.mobile-nav-toggle {
+  display: none;
+}
+@media (max-width: 38em) {
+  nav {
+    position: fixed;
+    inset: 0 0 0 30%;
+    background: rgba(var(--blueBrand), 0.95);
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+  nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+  .nav-menu {
+    flex-direction: column;
+    padding: min(30vh, 10rem) 0.5em;
+    gap: 2em;
+  }
+  .mobile-nav-toggle {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    background-color: transparent;
+    background-image: url("/icons/hamburger.svg");
+    background-repeat: no-repeat;
+    width: 2rem;
+    aspect-ratio: 1;
+    border: none;
+    right: 2rem;
+    top: 2rem;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("/icons/hamb-close.svg");
+  }
+}
+/******* END NAVBAR *******/
+
+/****** Side Navbar ******/
+.sidebarContainer {
+  padding-left: 0.5rem;
+  grid-area: sidenav;
+}
+
+.sidebarContainer img {
+  width: 1rem;
+  opacity: 0.8;
+}
+.sidebarContainer img:hover {
+  opacity: 1;
+  color: blue;
+}
+.left-logo-container img {
+  margin-bottom: 4rem;
+  margin-top: 4.5rem;
+}
+.socialsContainer img {
+  margin-bottom: 4rem;
+}
+/****** End Side Navbar ******/
+
+/***** Descriptions *****/
+.companyDescription {
+  grid-area: description;
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.25rem;
+}
+
+.companyDescription p {
+  letter-spacing: 0;
+  text-align: left;
+  margin-left: 4.2rem;
+  max-width: 25rem;
+  margin-right: 1.25rem;
+}
+
+.companyDescription img {
+  width: 7rem;
+  transform: translateY(3rem);
+}
+
+.companyDescription2 {
+  grid-area: description2;
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.25rem;
+  transform: translateY(-20px);
+}
+
+.companyDescription2 p {
+  letter-spacing: 0;
+  text-align: right;
+  margin-right: 4.2rem;
+  margin-left: auto;
+  max-width: 25rem;
+}
+
+.companyDescription2 img {
+  margin-left: auto;
+  width: 7rem;
+  transform: translateY(3rem) scaleX(-1);
+}
+/****** End Descriptions ******/
+
+.logoImg {
+  visibility: hidden;
+  grid-area: logo;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+}
+
+.logoImg img {
+  width: 20rem;
+}
+/***** Frame and painting section *****/
+.mainProduct {
+  grid-area: mainProduct;
+  display: flex;
+  flex-direction: column;
+}
+.frame {
+  max-width: 70%;
+  margin: 0 auto;
+}
+.btnsContainer img {
+  box-shadow: 5px 5px 9px 0px #000000d2;
+  cursor: pointer;
+  margin: 1rem;
+}
+#painting {
+  grid-area: paintings;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#frame {
+  grid-area: frames;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+#frame img {
+  max-width: 19%;
+}
+#painting img {
+  max-width: 18%;
+}
+.frame {
+  grid-area: framedPainting;
+  border: 40px solid black;
+  background-color: antiquewhite;
+  box-shadow: 0px 5px 15px 2px rgba(0, 0, 0, 1);
+  padding: 0.625rem;
+  border-image-source: url("./pics/frame1.png");
+  border-image-slice: 100;
+  border-image-repeat: round;
+}
+/***** End frame and painting ****/
+
+/******* CAROUSEL *******/
+.carousel-container {
+  grid-area: carousel;
+  margin: 1.5rem 0.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.current-img-container img {
+  width: 30rem;
+}
+.opacity {
+  animation: ease-in-out opacity_anim 1.5s;
+}
+@keyframes opacity_anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.carousel-container .left-arrow-container {
+  margin-right: 0.5rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.6s;
+}
+.carousel-container .left-arrow-container img {
+  transform: scaleX(-1);
+  width: 3rem;
+}
+.carousel-container .left-arrow-container:hover {
+  transform: rotateX(180deg);
+}
+.carousel-container .right-arrow-container {
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: all ease-in-out 0.6s;
+}
+.carousel-container .right-arrow-container img {
+  width: 3rem;
+}
+.carousel-container .right-arrow-container:hover {
+  transform: rotateX(180deg);
+}
+/***** END CAROUSEL *****/
+
+/*** three circular icons at the end ****/
+.pointsContainer {
+  /* border: 2px solid darkorchid; */
+  padding: 1rem;
+  grid-area: points;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.point-img img {
+  width: 3.2rem;
+  margin: 0 0.625rem;
+}
+
+/*=== CONTACT and FAQ SECTION ===*/
+.googleMap {
+  width: 100%;
+}
+.contactFaq-section {
+  margin-top: 5rem;
+  max-width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactAndFaq-container {
+  display: flex;
+  flex-direction: column;
+  width: 98%;
+}
+.faq-form {
+  display: flex;
+  flex-direction: column;
+}
+.flex-gap {
+  margin: 1rem;
+}
+.accordion {
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+}
+.accordion:after {
+  content: "\02795"; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #bf7300;
+  float: right;
+  margin-left: 5px;
+}
+.active-acc:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+.faq-q-title {
+  background: rgba(255, 255, 255, 0.1);
+  color: hsl(37, 73%, 51%);
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-align: center;
+  font-family: var(--ff-cinzel);
+}
+
+.active-acc,
+.accordion:hover {
+  background: rgba(var(--blueBrand), 1);
+}
+.panel {
+  padding: 0 18px;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+@supports (backdrop-filter: blur(0.5rem)) {
+  .faq-q-title {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.6rem);
+  }
+  .panel {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(0.6rem);
+  }
+}
+
+/* == Contact Form == */
+.map-container {
+  width: 95%;
+}
+
+/*=== LAYOUT OF PAGE USING TEMPLATE AREAS & MEDIA QUERIES ===*/
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(2.5rem, 2.8125rem) 1fr;
+  grid-template-areas:
+    "header header"
+    "sidenav logo"
+    "sidenav description"
+    "sidenav carousel"
+    "sidenav description2"
+    "sidenav mainProduct"
+    "sidenav points";
+}
+
+@media (max-width: 512px) {
+  .frame {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 755px) {
+  .frame {
+    max-width: 32rem;
+  }
+  #painting img {
+    max-width: 8rem;
+  }
+  #frame img {
+    max-width: 10rem;
+  }
+}
+@media (min-width: 1017px) {
+  .sidebarContainer img {
+    width: 1.25rem;
+  }
+  .logoImg {
+    visibility: unset;
+  }
+}
+@media (min-width: 1055px) {
+  .mainProduct {
+    margin-top: 2.5rem;
+  }
+  .frame {
+    max-width: 32rem;
+  }
+  #frame {
+    margin-top: 0.5rem;
+  }
+  #painting img {
+    max-width: 8rem;
+  }
+  #frame img {
+    max-width: 10rem;
+  }
+}
+@media (min-width: 1320px) {
+  .contactAndFaq-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .faq-form {
+    width: 50%;
+  }
+  /* == Contact Form == */
+  .map-container {
+    width: 50%;
+  }
+}
+@media (min-width: 1480px) {
+  .wrapper {
+    grid-template-columns: minmax(50px, 65px) 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    grid-template-areas:
+      "header header header"
+      "sidenav logo ."
+      "sidenav description mainProduct"
+      "sidenav carousel mainProduct"
+      "sidenav description2 mainProduct"
+      "sidenav . points";
+  }
+  .mainProduct {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas:
+      "framedPainting paintings"
+      "frames frames";
+  }
+  .frame {
+    margin-bottom: 1rem;
+    margin-right: -1rem;
+    max-width: 28rem;
+  }
+  #painting {
+    flex-direction: column;
+  }
+  #frame {
+    margin-bottom: auto;
+  }
+  #frame img {
+    max-width: 10.5rem;
+    transition: 0.5s;
+  }
+  #painting img {
+    max-width: 7rem;
+    transition: 0.5s;
+  }
+  #frame img:hover {
+    transform: translateY(-10px);
+  }
+  #painting img:hover {
+    transform: translateX(-5px);
+  }
+}
+
+/* === Animations.css === */
+.animate__animated.animate__fadeInRight {
+  --animate-duration: 4s;
+}
+.animate__animated.animate__fadeInLeft {
+  --animate-duration: 3s;
+}
+.animate__animated.animate__fadeInUp {
+  --animate-duration: 2s;
+}
+.animate__animated.animate__flipInX {
+  --animate-duration: 5s;
+}
+.animate__animated.animate__flipInY {
+  --animate-duration: 7s;
+}
