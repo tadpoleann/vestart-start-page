@@ -163,7 +163,7 @@ nav {
 }
 .left-logo-container img {
   margin-bottom: 4rem;
-  margin-top: 4.5rem;
+  margin-top: 8rem;
 }
 
 /****** End Side Navbar ******/
@@ -174,6 +174,7 @@ nav {
   display: flex;
   flex-direction: column;
   margin-left: 1.25rem;
+  margin-top: 5rem;
 }
 
 .companyDescription p {
@@ -319,15 +320,15 @@ nav {
 /***** END CAROUSEL *****/
 
 /*** three circular icons at the end ****/
-.pointsContainer {
-  /* border: 2px solid darkorchid; */
+/* .pointsContainer {
+  border: 2px solid darkorchid;
   padding: 1rem;
   grid-area: points;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .point-img img {
   width: 3.2rem;
@@ -425,8 +426,8 @@ nav {
     "sidenav description"
     "sidenav carousel"
     "sidenav description2"
-    "sidenav mainProduct"
-    "sidenav points";
+    "sidenav mainProduct";
+  /* "sidenav points"; */
 }
 
 @media (max-width: 512px) {
@@ -493,8 +494,8 @@ nav {
       "sidenav logo ."
       "sidenav description mainProduct"
       "sidenav carousel mainProduct"
-      "sidenav description2 mainProduct"
-      "sidenav . points";
+      "sidenav description2 mainProduct";
+    /* "sidenav . points"; */
   }
   .mainProduct {
     display: grid;
